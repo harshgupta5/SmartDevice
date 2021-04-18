@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<style>
+    .root{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    }
+    .subdiv{
+    width:575px;
+    height:auto;
+    margin-top:80px;
+    background:#f1f2f6;
+    border:solid #dfe4ea;
+    padding:20px;
+    border-radius:7px;
+
+    }
+
+</style>
+<html lang="en">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js">
+    </script>
+    <script src="/static/js/project.js"></script>
+    <link rel="stylesheet" href="/static/css/app.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Interface</title>
+</head>
+<body>
+<form action="/submitrecord3" method="post" enctype="multipart/form-data"> {% csrf_token %}
+    <div class="root">
+    <div class="subdiv">
+<div class="form-group has-icon">
+    <i class="icon-id-card"></i>
+    <input type="text" class="form-control form-control-lg" placeholder="Company ID" value="{{ companyid }}" name="companyid">
+</div>
+<div class="form-group has-icon col">
+     <i class="icon-map" ></i>
+     <select  style="padding-left: 60px;    padding-top: 12px;" class="form-control form-control-lg" id="categoryid" name="categoryid">
+         <option>-Category-</option>
+     </select>
+      </div>
+<div class="form-group has-icon col">
+     <i class="icon-map" ></i>
+     <select  style="padding-left: 60px;    padding-top: 12px;" class="form-control form-control-lg" id="subcategoryid" name="subcategoryid">
+         <option>-Sub Category-</option>
+     </select>
+      </div>
+
+<div class="form-group has-icon">
+    <i class="icon-file-text-o"></i>
+    <input type="text" class="form-control form-control-lg" placeholder="Model Name" name="modelname">
+</div>
+<div class="form-group has-icon">
+    <i class="icon-file-text-o"></i>
+    <input type="text" class="form-control form-control-lg" placeholder=" Model Description" name="description">
+</div>
+
+<div class="row">
+    <div class="form-group col">
+<input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit">
+      </div>
+    <div class="form-group col">
+<input type="reset" class="btn btn-primary btn-lg btn-block" value="Reset">
+      </div>
+</div>
+        <div class="form-group">
+        <center><h4><b>{{ msg }}</b></h4></center>
+      </div>
+
+    </div>
+    </div>
+</form>
+
+</body>
+</html>

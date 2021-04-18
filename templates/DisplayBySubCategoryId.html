@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<style>
+    .root{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    }
+    .subdiv{
+    width:575px;
+    height:auto;
+    margin-top:80px;
+    background:#f1f2f6;
+    border:solid #dfe4ea;
+    padding:20px;
+    border-radius:7px;
+
+    }
+
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js">
+    </script>
+    <script src="/static/js/statecity.js"></script>
+    <link rel="stylesheet" href="/static/css/app.css">
+    <title>Sub Category Interface</title>
+</head>
+<body>
+<form action="/editdeletesubcategoryrecord" method="get" >
+    <input type="hidden" name="subcategoryid" value="{{data.2}}">
+    <div class="root">
+    <div class="subdiv">
+<div class="form-group has-icon">
+    <i class="icon-id-card"></i>
+    <input type="text" value="{{data.0}}" class="form-control form-control-lg" placeholder="Company ID" name="companyid">
+</div>
+<div class="form-group has-icon">
+    <i class="icon-id-card"></i>
+    <input type="text" value="{{data.1}}" class="form-control form-control-lg" placeholder="Category ID" name="categoryid">
+</div>
+        <div class="form-group has-icon">
+    <i class="icon-file-text-o"></i>
+    <input type="text" value="{{data.3}}" class="form-control form-control-lg" placeholder=" Sub Category Name" name="subcategoryname">
+</div>
+<div class="form-group has-icon">
+    <i class="icon-file-text-o"></i>
+    <input type="text" value="{{data.4}}" class="form-control form-control-lg" placeholder="Description" name="description">
+</div>
+
+<div class="row">
+    <div class="form-group col">
+<input type="submit" class="btn btn-primary btn-lg btn-block" value="Edit" name="btn">
+      </div>
+    <div class="form-group col">
+<input type="submit" class="btn btn-primary btn-lg btn-block" value="Delete" name="btn">
+      </div>
+</div>
+
+    </div>
+    </div>
+</form>
+</body>
+</html>

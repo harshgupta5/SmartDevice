@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Picture</title>
+</head>
+<body>
+<center>
+    <h3>Edit Sub Category Logo</h3><br><br>
+    <form action="/editsubcategorylogo" method="post" enctype="multipart/form-data"> {% csrf_token %}
+        <input type="hidden" value="{{ data.0 }}" name="subcategoryid">
+        <img src="/static/{{data.1}}" width="150" height="150"><br><br>
+        <input type="file" name="icon" required><br>
+        <input type="submit">
+    </form>
+</center>
+
+
+</body>
+</html>

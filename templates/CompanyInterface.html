@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<style>
+    .root{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    }
+    .subdiv{
+    width:575px;
+    height:auto;
+    margin-top:80px;
+    background:#f1f2f6;
+    border:solid #dfe4ea;
+    padding:20px;
+    border-radius:7px;
+
+    }
+
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js">
+    </script>
+    <script src="/static/js/statecity.js"></script>
+    <link rel="stylesheet" href="/static/css/app.css">
+    <title>Title</title>
+</head>
+<body>
+<form action="/submitrecord" method="post" enctype="multipart/form-data"> {% csrf_token %}
+<div class="root">
+    <div class="subdiv">
+<div class="form-group has-icon">
+    <i class="icon-font-awesome"></i>
+    <input type="text" class="form-control form-control-lg" placeholder="Company Name" name="companyname">
+</div>
+<div class="form-group has-icon">
+    <i class="icon-user"></i>
+    <input type="text" class="form-control form-control-lg" placeholder="Contact Person" name="contactperson">
+</div>
+<div class="row">
+<div class="form-group has-icon col">
+    <i class="icon-mobile"></i>
+    <input type="text" class="form-control form-control-lg" placeholder="Mobile Number" name="mobilenumber">
+</div>
+<div class="form-group has-icon col">
+    <i class="icon-email"></i>
+    <input type="text" class="form-control form-control-lg" placeholder="Email Address" name="emailaddress" >
+</div>
+</div>
+<div class="form-group has-icon">
+    <i class="icon-address-card"></i>
+    <input type="text" class="form-control form-control-lg" placeholder="Company Address" name="companyaddress">
+</div>
+<div class="row">
+<div class="form-group has-icon col">
+    <i class="icon-map"></i>
+    <select style="padding-left: 60px;    padding-top: 12px;"class="form-control form-control-lg" id="state" name="state">
+        <option>-State-</option>
+    </select>
+</div>
+<div class="form-group has-icon col">
+    <i class="icon-building"></i>
+    <select style="padding-left: 60px;    padding-top: 12px;" class="form-control form-control-lg" id="city" name="city">
+        <option>-City-</option>
+    </select>
+</div>
+<div class="form-group has-icon col">
+    <i class="icon-zip"></i>
+    <input type="text" class="form-control form-control-lg" placeholder="Zip Code" name="zipcode">
+</div>
+</div>
+<div class="row">
+<div class="form-group has-icon col">
+    <i class="icon-image"></i>
+    <input type="file" class="form-control form-control-lg" placeholder="Company Logo" name="companylogo">
+</div>
+<div class="form-group has-icon col">
+    <i class="icon-image"></i>
+    <input type="Location" class="form-control form-control-lg" placeholder="Latitude,Longitude" name="location">
+</div>
+
+</div>
+<div class="form-group has-icon">
+    <i class="icon-user-secret"></i>
+    <input type="password" class="form-control form-control-lg" placeholder="Password" name="password">
+</div>
+<div class="row">
+    <div class="form-group col">
+<input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit">
+      </div>
+    <div class="form-group col">
+<input type="reset" class="btn btn-primary btn-lg btn-block" value="Reset">
+      </div>
+</div>
+        <div class="form-group">
+        <center><h4><b>{{ msg }}</b></h4></center>
+      </div>
+
+
+
+
+
+</div>
+    </div>
+    </form>
+</body>
+</html>
